@@ -1,0 +1,35 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="my-app">
+<div ng-controller="LoginController">
+    <label>Username</label>
+    <input type="text" name="username"/>
+
+    <label>Password</label>
+    <input type="text" name="password"/>
+    <button ng-click="login()">Login</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+<!--Angular Core-->
+<script src="/webjars/angularjs/angular.min.js" type="text/javascript"></script>
+<!--Angular router-->
+<script src="/webjars/angularjs/angular-route.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    angular.module('my-app', ['ngRoute'])
+        .controller('LoginController', function ($scope, $window) {
+            $scope.login = function () {
+                $window.location.href = '/welcome';
+            }
+        });
+</script>
+</body>
+</html>
